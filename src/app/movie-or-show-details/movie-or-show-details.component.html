@@ -1,0 +1,14 @@
+<button routerLink="/" type="button" class="btn button-gg" [ngClass]="{'btn-danger': media.movieOrShow, 'btn-primary': !media.movieOrShow}">Back</button>
+<div class="d-flex justify-content-center">
+  <div class="w-50 p-3">
+    <div class="mb-2 mt-2">
+      <div class="card mb-12 border-gray">
+        <img class="card-img-top" *ngIf="media.poster" [src]="media.poster">
+        <div class="card-body" [ngClass]="{'bg-danger': media.movieOrShow, 'bg-primary': !media.movieOrShow}">
+          <h5 class="card-title text-light"> {{ media.title }} </h5>
+          <p class="card-text text-light"> {{ media.overview }} </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

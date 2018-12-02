@@ -1,0 +1,35 @@
+<div class="button-group-gg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-sm-offset-3 p-0 mb-4 mt-4">
+                <div class="md-form">
+                    <div class="input-group stylish-input-group">
+                        <span class="input-group-prepend">
+                            <div class="input-group-text bg-transparent border-right-0">
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </span>
+                        <input [(ngModel)]="searchTerm" (ngModelChange)="searchMedia($event)" type="text" class="form-control py-2 border-left-0 border"
+                            placeholder="Search shows or movies">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group btn-group-lg">
+        <button (click)="getMedia(0, true)" [ngClass]="{'active': dataService.context == 0}" type="button" class="btn btn-primary">Movies</button>
+        <button (click)="getMedia(1, true)" [ngClass]="{'active': dataService.context == 1}" type="button" class="btn btn-danger">Shows</button>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <div class="row w-75 p-3">
+        <div class="col-md-6 mb-2 mt-2" *ngFor="let med of media" [routerLink]="['/details', dataService.context, med.id]">
+            <div class="card mb-12 border-gray card-hover-gg">
+                <img class="card-img-top" *ngIf="med.poster" [src]="med.poster">
+                <div class="card-body" [ngClass]="{'bg-danger': med.movieOrShow, 'bg-primary': !med.movieOrShow}">
+                    <h5 class="card-title text-light"> {{ med.title }} </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

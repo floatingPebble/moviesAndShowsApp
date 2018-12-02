@@ -4,5 +4,10 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  imagePath: 'https://image.tmdb.org/t/p/w500_and_h282_face/',
+  apiKey: 'dbbb3abe973a0295bdb8bc626e891530',
+  apiBaseUrl: 'https://api.themoviedb.org/3'
+
 };
+
