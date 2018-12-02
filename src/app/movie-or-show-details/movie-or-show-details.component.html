@@ -2,9 +2,9 @@
 <div class="d-flex justify-content-center">
   <div class="w-50 p-3">
     <div class="mb-2 mt-2">
-      <div class="card mb-12 border-gray">
+      <div class="card mb-12 border-gray" *ngIf="media.title">
         <img class="card-img-top" *ngIf="media.poster" [src]="media.poster">
-        <div class="card-body" [ngClass]="{'bg-danger': media.movieOrShow, 'bg-primary': !media.movieOrShow}">
+        <div class="card-body" [ngClass]="{'bg-danger': dataService.context == 1, 'bg-primary': dataService.context == 0}">
           <h5 class="card-title text-light"> {{ media.title }} </h5>
           <p class="card-text text-light"> {{ media.overview }} </p>
         </div>

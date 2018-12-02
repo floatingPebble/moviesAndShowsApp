@@ -5,12 +5,10 @@ export class Media {
   public title: string;
   public poster: string;
   public overview: string;
-  public movieOrShow: boolean;
 
   constructor(resMedia?: any) {
     this.id = resMedia ? resMedia.id : 0;
     this.title = resMedia ? (resMedia.title || resMedia.name) : '';
-    this.movieOrShow = resMedia && resMedia.name ? true : false;
     this.overview = resMedia ? resMedia.overview : '';
 
     let image = resMedia ? (resMedia.backdrop_path || resMedia.poster_path) : '';
